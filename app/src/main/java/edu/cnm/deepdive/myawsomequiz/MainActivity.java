@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+
+
   private void loadHighscore() {
     SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
     highscore= prefs.getInt(KEY_HIGHSCORE, 0);
