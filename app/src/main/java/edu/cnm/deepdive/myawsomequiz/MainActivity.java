@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
   public static final String KEY_HIGHSCORE = "keyHighscore";
 
   private TextView textViewHighScore;
+  private Spinner spinnerDifficulty;
+
   private int highscore;
 
 
@@ -27,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     textViewHighScore = findViewById(R.id.text_view_highscore);
+    spinnerDifficulty = findViewById(R.id.spinner_difficulty);
+
+    String[] difficultyLevels = Question.getAllDifficultyLevels();
+
     loadHighscore();
 
     Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
