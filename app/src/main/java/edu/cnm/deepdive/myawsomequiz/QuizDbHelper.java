@@ -67,9 +67,25 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     Category c3 = new Category("Math");
     addCategory(c3);
   }
+
+//  public void addCategory(Category category) {
+//    db = getWritableDatabase();
+//    insertCategory(category);
+//  }
+//
+//  public void addCategories(List<Category> categories) {
+//    db = getWritableDatabase();
+//
+//    for (Category category : categories) {
+//      insertCategory(category);
+//    }
+//  }
+
+
   private void addCategory(Category category) {
     ContentValues cv = new ContentValues();
     cv.put(CategoriesTable.COLUMN_NAME, category.getName());
+
     db.insert(CategoriesTable.TABLE_NAME, null, cv);
   }
   private void fillQuestionsTable() {
@@ -98,6 +114,21 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question.DIFFICULTY_MEDIUM, 5);
     addQuestion(q6);
   }
+
+//  public void addQuestion(Question question) {
+//    db = getWritableDatabase();
+//    insertQuestion(question);
+//  }
+//
+//  public void addQuestions(List<Question> questions) {
+//    db = getWritableDatabase();
+//
+//    for (Question question : questions) {
+//      insertQuestion(question);
+//    }
+//  }
+
+
   private void addQuestion(Question question) {
     ContentValues cv = new ContentValues();
     cv.put(QuestionsTable.COLUMN_QUESTION, question.getQuestion());

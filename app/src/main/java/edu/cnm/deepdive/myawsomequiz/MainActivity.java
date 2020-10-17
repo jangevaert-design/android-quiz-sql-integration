@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
   private Spinner spinnerCategory;
   private Spinner spinnerDifficulty;
   private int highscore;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -30,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
     textViewHighscore = findViewById(R.id.text_view_highscore);
     spinnerCategory = findViewById(R.id.spinner_category);
     spinnerDifficulty = findViewById(R.id.spinner_difficulty);
+
     loadCategories();
     loadDifficultyLevels();
     loadHighscore();
+
     Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
     buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         startQuiz();
       }
     });
+
+
   }
   private void startQuiz() {
     Category selectedCategory = (Category) spinnerCategory.getSelectedItem();
